@@ -10,15 +10,18 @@ class FingerSpellingService():
         self.__signClassification = SignClassification()
         self.__confidence = confidence
 
-    def getPhrase(self, jsonFilePath='', jsonFile=None):
-        if jsonFilePath != '':
+    def getPhrase(self, jsonFilePath='', jsonData=None):
+        
+        if jsonData != None:
+            signWords = parseJSONtoHands(data=jsonData)
+
+        elif jsonFilePath != '':
             jsonFile = open(jsonFilePath)
-        
-        if jsonFile == None:
-            print('None file')
-            return ''
-        
-        signWords = parseJSONtoHands(jsonFile)
+            signWords = parseJSONtoHands(jsonFile)
+        else:
+            print('Error: jsonFilePath or jsonData parameters have to be valid') 
+            return None       
+            
         message = ''
         for signWord in signWords:
             word = ''

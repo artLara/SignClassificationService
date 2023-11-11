@@ -1,8 +1,10 @@
 import tensorflow as tf
 from tensorflow.keras import models
+import sys
+sys.path.append('../')
 class SignClassification():
     def __init__(self):
-        self.__model = tf.keras.models.load_model('../bin/saved_model/alf_gray')
+        self.__model = tf.keras.models.load_model('classifier/service/bin/saved_model/alf_gray')
         self.__dictOneHot = {0: 'A',
                          1: 'B',
                          2: 'C',
