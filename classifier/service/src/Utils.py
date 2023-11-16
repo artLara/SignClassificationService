@@ -1,4 +1,5 @@
 import json
+import requests
 from .Hand import Hand
 def parseJSONtoHands(jsonFile='', data = None):
     
@@ -26,3 +27,8 @@ def parseJSONtoHands(jsonFile='', data = None):
                 word = []
 
     return signWords
+
+def sendMessage(message):
+    payload = {'json_payload': message}
+    r = requests.get('http://localhost:8002/message_postProcessing/api/v1/', data=json.dumps(payload))
+    return r

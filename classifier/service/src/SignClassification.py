@@ -1,34 +1,37 @@
 import tensorflow as tf
-from tensorflow.keras import models
+# from tensorflow.keras import models
 import sys
 sys.path.append('../')
 class SignClassification():
     def __init__(self):
-        self.__model = tf.keras.models.load_model('classifier/service/bin/saved_model/alf_gray')
-        self.__dictOneHot = {0: 'A',
-                         1: 'B',
-                         2: 'C',
-                         3: 'D',
-                         4: 'E',
-                         5: 'F',
-                         6: 'G',
-                         7: 'H',
-                         8: 'I',
-                         9: 'L',
-                         10: 'M',
-                         11: 'N',
-                         12: 'O',
-                         13: 'P',
-                         14: 'Q',
-                         15: 'R',
-                         16: 'S',
-                         17: 'T',
-                         18: 'U',
-                         19: 'V',
-                         20: 'W',
-                         21: 'X',
-                         22: 'Y',
-                         23: 'Z'}
+        # self.__model = tf.keras.models.load_model('classifier/service/bin/saved_model/alf_gray')
+        self.__model = tf.keras.models.load_model('/home/lara/Desktop/dactilologiaLSM_microservices/SignClassificationService/classifier/service/bin/saved_model/lsm')
+        self.__dictOneHot = {0: 'a',
+                            1: 'b',
+                            2: 'c',
+                            3: 'd',
+                            4: 'e',
+                            5: 'f',
+                            6: 'g',
+                            7: 'h',
+                            8: 'i',
+                            9: 'j',
+                            10: 'l',
+                            11: 'm',
+                            12: 'n',
+                            13: 'o',
+                            14: 'p',
+                            15: 'q',
+                            16: 'r',
+                            17: 's',
+                            18: 't',
+                            19: 'u',
+                            20: 'v',
+                            21: 'w',
+                            22: 'x',
+                            23: 'y',
+                            24: 'z',
+                            25: 'ñ'}
 
     def classify(self, pattern):
         res = self.__model.predict(pattern, verbose=0)

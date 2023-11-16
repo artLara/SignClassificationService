@@ -10,6 +10,8 @@ import sys
 sys.path.append('../')
 sys.path.append('../../')
 from classifier.service.src.FingerSpellingService import FingerSpellingService
+from classifier.service.src.Utils import sendMessage
+
 
 fingerSpellingService = FingerSpellingService()
 
@@ -23,6 +25,7 @@ class Post_APIView(APIView):
         # print('------>Data:', type(data))
         message = fingerSpellingService.getPhrase(jsonData=data)
         print(message)
+        # r = sendMessage(message)
         response = {
            "message": "OK",
            "error": False,

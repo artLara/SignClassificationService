@@ -4,6 +4,9 @@ This file is a test for the service with previous data loaded.
 import os
 import sys
 sys.path.append('../')
+sys.path.append('../../')
+sys.path.append('../../../')
+
 from src.FingerSpellingService import FingerSpellingService
 class TestService():
     def __init__(self):
