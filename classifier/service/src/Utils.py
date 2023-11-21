@@ -30,5 +30,5 @@ def parseJSONtoHands(jsonFile='', data = None):
 
 def sendMessage(message):
     payload = {'json_payload': message}
-    r = requests.get('http://localhost:8002/message_postProcessing/api/v1/', data=json.dumps(payload))
+    r = requests.get('http://localhost:8002/message_postprocessing/api/v1/', data=json.dumps(payload))
     return r

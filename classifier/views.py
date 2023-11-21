@@ -25,7 +25,7 @@ class Post_APIView(APIView):
         # print('------>Data:', type(data))
         message = fingerSpellingService.getPhrase(jsonData=data)
         print(message)
-        # r = sendMessage(message)
+        r = sendMessage(message)
         response = {
            "message": "OK",
            "error": False,
